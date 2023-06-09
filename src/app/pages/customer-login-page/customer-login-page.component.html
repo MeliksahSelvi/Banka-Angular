@@ -1,0 +1,49 @@
+<form [formGroup]="customerLoginForm" (ngSubmit)="submit()">
+    <p-panel>
+
+        <ng-template pTemplate="header"> <span class="text-primary font-semibold text-xl">Müşteri Giriş Ekranı</span></ng-template>
+
+        <div class="p-inputgroup">
+            <span class="p-inputgroup-addon">
+                <i class="pi pi-envelope"></i>
+            </span>
+            <input pInputText formControlName="identityNo" placeholder="Tc Kimlik No" />
+        </div>
+
+        <!-- <small [style.color]="'red'" *ngIf="customerLoginForm.get('identityNo')?.hasError('required') && (customerLoginForm.get('identityNo')?.touched || customerLoginForm.get('identityNo')?.dirty)">
+            Tc Kimlik No boş geçilemez
+        </small>
+        <br>
+
+        <small [style.color]="'red'" *ngIf="customerLoginForm.get('identityNo')?.hasError('minLength') || customerLoginForm.get('identityNo')?.hasError('maxLength')">
+            Tc Kimlik No 11 karakter olmalı
+        </small>
+        <br>
+
+        <small [style.color]="'red'"*ngIf="customerLoginForm.get('identityNo')?.hasError('pattern')">
+            Tc Kimlik No sadece rakam olmalı
+        </small> -->
+        <br>
+
+        <div class="p-inputgroup">
+            <span class="p-inputgroup-addon">
+              <i class="pi pi-lock"></i>
+            </span>
+            <input pPassword type="password" formControlName="password" placeholder="Password">
+        
+          </div>
+    
+        <!-- <small [style.color]="'red'" *ngIf="customerLoginForm.get('password')?.hasError('required') && (customerLoginForm.get('password')?.touched || customerLoginForm.get('password')?.dirty)">
+            Parola boş geçilemez
+        </small>
+        <small [style.color]="'red'" *ngIf="customerLoginForm.get('password')?.hasError('minLength')">
+            En az 6 karakter olmalı
+        </small> -->
+
+        <ng-template pTemplate="footer">
+            <p-button type="submit" label="Giriş" styleClass="p-button-success"></p-button>
+            <p-button (onClick)="route()" label="Kayıt Ol" styleClass="p-button-login"></p-button>
+        </ng-template>
+     
+    </p-panel>
+</form>

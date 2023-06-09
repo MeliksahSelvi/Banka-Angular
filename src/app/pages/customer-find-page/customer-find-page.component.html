@@ -1,0 +1,22 @@
+<app-customer-find-filter (customersEmit)="setCustomers($event)"></app-customer-find-filter>
+
+<p-table [value]="customers" [tableStyle]="{ 'min-width': '50rem' }">
+    <ng-template pTemplate="header">
+        <tr>
+            <th>ID</th>
+            <th>AD</th>
+            <th>SOYAD</th>
+            <th>TC KİMLİK NO</th>
+            <th>PASSWORD</th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-customer>
+        <tr>
+            <td>{{ customer.id }}</td>
+            <td>{{ customer.name | titlecase}}</td>
+            <td>{{ customer.surName | uppercase}}</td>
+            <td>{{ customer.identityNo }}</td>
+            <td>{{ customer.password }}</td>
+        </tr>
+    </ng-template>
+</p-table>

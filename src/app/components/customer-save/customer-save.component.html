@@ -1,0 +1,68 @@
+<form [formGroup]="customerSaveForm" (ngSubmit)="submit()">
+    <p-panel>
+
+        <ng-template pTemplate="header"> <span class="text-primary font-semibold text-xl">Müşteri Kayıt</span></ng-template>
+
+        <div class="p-inputgroup">
+            <span class="p-inputgroup-addon">
+                <i class="pi pi-envelope"></i>
+            </span>
+            <input pInputText formControlName="name" placeholder="Ad" />
+        </div>
+
+        <small [style.color]="'red'" *ngIf="customerSaveForm.get('name')?.hasError('required') && (customerSaveForm.get('name')?.touched || customerSaveForm.get('name')?.dirty)">
+            Ad boş geçilemez
+        </small>
+        <br>
+
+        <div class="p-inputgroup">
+            <span class="p-inputgroup-addon">
+                <i class="pi pi-envelope"></i>
+            </span>
+            <input pInputText formControlName="surName" placeholder="Soyad" />
+        </div>
+
+        <small [style.color]="'red'" *ngIf="customerSaveForm.get('surName')?.hasError('required') && (customerSaveForm.get('surName')?.touched || customerSaveForm.get('surName')?.dirty)">
+            Soyad boş geçilemez
+        </small>
+        <br>
+
+        <div class="p-inputgroup">
+            <span class="p-inputgroup-addon">
+                <i class="pi pi-envelope"></i>
+            </span>
+            <input pInputText formControlName="identityNo" placeholder="Tc Kimlik No" />
+        </div>
+
+        <small [style.color]="'red'" *ngIf="customerSaveForm.get('identityNo')?.hasError('required') && (customerSaveForm.get('identityNo')?.touched || customerSaveForm.get('identityNo')?.dirty)">
+            Tc Kimlik No boş geçilemez
+        </small>
+        <br>
+
+        <small [style.color]="'red'" *ngIf="customerSaveForm.get('identityNo')?.hasError('minLength') || customerSaveForm.get('identityNo')?.hasError('maxLength')">
+            Tc Kimlik No 11 karakter olmalı
+        </small>
+        <br>
+
+        <small [style.color]="'red'"*ngIf="customerSaveForm.get('identityNo')?.hasError('pattern')">
+            Tc Kimlik No sadece rakam olmalı
+        </small>
+        <br>
+
+        <div class="p-inputgroup">
+            <span class="p-inputgroup-addon">
+                <i class="pi pi-lock"></i>
+            </span>
+            <input pPassword type="password" formControlName="password" placeholder="Şifre" />
+        </div>
+
+        <small [style.color]="'red'" *ngIf="customerSaveForm.get('password')?.hasError('required') && (customerSaveForm.get('password')?.touched || customerSaveForm.get('password')?.dirty)">
+            Parola boş geçilemez
+        </small>
+
+        <ng-template pTemplate="footer">
+            <p-button type="submit" label="Kayıt" styleClass="p-button-success"></p-button>
+        </ng-template>
+
+    </p-panel>
+</form>

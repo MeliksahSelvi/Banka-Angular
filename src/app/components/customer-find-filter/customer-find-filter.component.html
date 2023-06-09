@@ -1,0 +1,16 @@
+<form [formGroup]="customerFindFilterForm" (ngSubmit)="submit()">
+    <p-panel>
+        <div class="p-inputgroup">
+            <span class="p-inputgroup-addon">
+                <i class="pi pi-th-large"></i>
+            </span>
+            <p-inputNumber formControlName="id" placeholder="Id"></p-inputNumber>
+        </div>
+
+
+        <ng-template pTemplate="footer">
+            <p-button icon="pi pi-search" type="submit" label="Ara" styleClass="p-button-search"></p-button>
+        </ng-template>
+
+    </p-panel>
+</form>

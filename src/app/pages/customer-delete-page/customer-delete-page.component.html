@@ -1,0 +1,16 @@
+<form [formGroup]="customerDeleteForm" (ngSubmit)="submit()">
+    <p-panel>
+        <div class="p-inputgroup">
+            <span class="p-inputgroup-addon">
+                <i class="pi pi-th-large"></i>
+            </span>
+            <p-inputNumber formControlName="id" placeholder="Id"></p-inputNumber>
+        </div>
+
+
+        <ng-template pTemplate="footer">
+            <p-button icon="pi pi-trash" type="submit" label="Sil" styleClass="p-button-delete"></p-button>
+        </ng-template>
+
+    </p-panel>
+</form>
