@@ -7,7 +7,7 @@ import { MenuItem } from 'primeng/api';
   styleUrls: ['./admin-layout.component.scss']
 })
 export class AdminLayoutComponent implements OnInit{
-  
+
   items!: MenuItem[];
 
   ngOnInit(): void {
@@ -81,7 +81,7 @@ export class AdminLayoutComponent implements OnInit{
           },
         ]
       }
-    
+
     ]
   }
 
