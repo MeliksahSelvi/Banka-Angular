@@ -87,7 +87,7 @@ export class CustomerLayoutComponent implements OnInit{
           const result=confirm('Siteden çıkmak istediğinize emin misiniz?')
           if(result){
             localStorage.clear();
-            window.location.reload();
+            window.location.href='/'
           }
         }
       },
