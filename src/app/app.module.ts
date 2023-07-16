@@ -35,12 +35,17 @@ import {CustomerRegisterPageComponent} from "./pages/customer/customer-register-
 import {CustomerSavePageComponent} from "./pages/customer/customer-save-page/customer-save-page.component";
 import {NotFoundPageComponent} from "./pages/util/not-found-page/not-found-page.component";
 import {ButtonModule} from "primeng/button";
-import {ReactiveFormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {PanelModule} from "primeng/panel";
 import {TableModule} from "primeng/table";
 import {InputNumberModule} from "primeng/inputnumber";
 import {CustomerFindFilterComponent} from "./components/customer-find-filter/customer-find-filter.component";
 import {CustomerSaveComponent} from "./components/customer-save/customer-save.component";
+import {BrowserModule} from "@angular/platform-browser";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {HttpClientModule} from "@angular/common/http";
+import {PasswordModule} from "primeng/password";
+import {InputTextModule} from "primeng/inputtext";
 
 @NgModule({
   declarations: [
@@ -77,6 +82,12 @@ import {CustomerSaveComponent} from "./components/customer-save/customer-save.co
     PanelModule,
     TableModule,
     InputNumberModule,
+    BrowserModule,
+    BrowserAnimationsModule,
+    HttpClientModule,
+    FormsModule,
+    PasswordModule,
+    InputTextModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
