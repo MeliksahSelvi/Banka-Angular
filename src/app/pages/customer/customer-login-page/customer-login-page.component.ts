@@ -9,9 +9,9 @@ import { CustomerLoginModel, CustomerLoginService } from 'src/app/service/custom
 export class CustomerLoginPageComponent {
 
   customerLoginForm:FormGroup=this.fb.group({
-    
+
     identityNo:[
-      '',
+      '12345678990',
       [
         Validators.required,
         // Validators.pattern("^[0-9]*$"),
@@ -20,7 +20,7 @@ export class CustomerLoginPageComponent {
       ]
     ],
     password:[
-      '',
+      '12345678990',
       [
         Validators.required,
         // Validators.minLength(6)
@@ -33,7 +33,7 @@ export class CustomerLoginPageComponent {
   }
 
   submit(){
-         
+
     const param=this.customerLoginForm.value as CustomerLoginModel;
     console.log('param',param)
     if(param!=undefined){

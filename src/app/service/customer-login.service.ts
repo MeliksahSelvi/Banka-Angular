@@ -9,6 +9,12 @@ export interface CustomerLoginModel{
   password:string,
 }
 
+export interface JwtToken{
+  userId:number;
+  token:string;
+  tokenIssuedTime:number;
+}
+
 @Injectable({
   providedIn: 'root'
 })
@@ -21,17 +27,18 @@ export class CustomerLoginService {
     .post<any>('http://localhost:8080/auth/login',loginModel)
     .pipe(
       take(1),
-      tap((token:any)=>{
-        console.log('result',token);
+      tap((jwtToken:JwtToken)=>{
+        console.log('result',jwtToken);
+        let token=jwtToken.token;
         if(token!=undefined){
-          localStorage.setItem('accessToken',token.data);
+          localStorage.setItem('accessToken',token);
         }
 
         setTimeout(() => {
           this.routerService.navigate(['/customer']);
         }, 2000);
-        
-        
+
+
       }),
       catchError((err : any) =>{
           console.log('err',err)
@@ -43,7 +50,7 @@ export class CustomerLoginService {
               message:'Tc Kimlik No veya Parola Hatalı'
             }
           }
-          
+
           return Promise.reject(errObject)
       })
     );
